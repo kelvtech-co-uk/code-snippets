@@ -1,0 +1,8 @@
+# place in .local/share/applications/
+
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=ddc-switcher
+Icon=/home/kelvin/ddc-switcher/ddc-switcher.svg
+Exec=/home/kelvin/ddc-switcher/ddc-switcher.sh
