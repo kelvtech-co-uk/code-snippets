@@ -17,13 +17,13 @@ log_message() {
 case "$radarr_eventtype" in
     Download)
         # Inform kodi-blackrack to update the video library.
-        /usr/bin/curl --data-binary '{"jsonrpc": "2.0", "method": "VideoLibrary.Scan", "params": {"showdialogs": false}, "id": 1}' -H 'content-type: application/json;' http://username:password@kodi-blackrack.kelvtech.local:8080/jsonrpc
+        /usr/bin/curl --data-binary '{"jsonrpc": "2.0", "method": "VideoLibrary.Scan", "params": {"showdialogs": false}, "id": 1}' -H 'content-type: application/json;' http://username:password@kodi-instance.mydomain:8080/jsonrpc
         log_message "Movies $radarr_movie_title downloaded to $radarr_movie_path"
         ;;
     MovieDelete)
         # Inform kodi-blackrack to clean the video library.
         sleep 10
-        /usr/bin/curl --data-binary '{"jsonrpc": "2.0", "method": "VideoLibrary.Clean", "id": 1}' -H 'content-type: application/json;' http://username:password@kodi-blackrack.kelvtech.local:8080/jsonrpc
+        /usr/bin/curl --data-binary '{"jsonrpc": "2.0", "method": "VideoLibrary.Clean", "id": 1}' -H 'content-type: application/json;' http://username:password@kodi-instance.mydomain:8080/jsonrpc
         log_message "Movie $radarr_movie_title delete from $radarr_movie_path"
         ;;
     Test)
